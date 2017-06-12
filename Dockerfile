@@ -24,20 +24,21 @@ rm -rf /var/cache/oracle-jdk8-installer
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 ENV PATH $PATH:$JAVA_HOME/bin
 
+
+#Configuracao do Maven
 RUN echo "Configurando Maven"
-# configurando o projeto
 RUN apt-get update
 RUN apt-get -y install maven
 RUN mkdir /home/lanchefacil
 RUN cd /home/lanchefacil && git init && git clone https://github.com/jorgejlp91/lancheFacil.git
 
-RUN apt-get -y install nginx
 
+#Configuracao do NGINX
+RUN apt-get -y install nginx
 RUN rm -f /etc/nginx/nginx.conf
 RUN cp /assets/nginx.conf /etc/nginx/
 
 #Instalacao do Jenkins
-
 RUN wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | apt-key add -
 RUN sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 RUN apt-get update
@@ -52,6 +53,7 @@ RUN cp /assets/config_job.xml /home/
 RUN cd /home
 RUN cp /assets/config_jenkins_job.sh /home/
 
+#Configuracoes finais
 RUN cp /assets/start_nginx_jenkins.sh /home/
 RUN cp /assets/start_app.sh /home/
 RUN chmod +x /home/start_nginx_jenkins.sh

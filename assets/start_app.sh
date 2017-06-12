@@ -1,1 +1,1 @@
-cd /home/lanchefacil/lanchefacil && mvn spring-boot:run
+cd /home/lanchefacil/lanchefacil & mvn spring-boot:run
