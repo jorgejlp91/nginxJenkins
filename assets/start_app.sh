@@ -1,1 +1,2 @@
-cd /home/lanchefacil/lanchefacil & mvn spring-boot:run
+cd /home/lanchefacil/lancheFacil/
+mvn spring-boot:run > log.log & tail -f log.log
