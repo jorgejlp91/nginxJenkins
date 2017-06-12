@@ -49,7 +49,6 @@ RUN rm -f /var/lib/jenkins/config.xml
 RUN cp /assets/jenkins_config.xml /var/lib/jenkins/config.xml
 RUN cp /assets/jenkins_config.xml /home/
 RUN cp /assets/config_job.xml /home/
-#RUN cp /assets/jenkins-cli.jar /home/
 RUN cd /home
 RUN cp /assets/config_jenkins_job.sh /home/
 
