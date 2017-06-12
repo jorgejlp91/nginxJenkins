@@ -16,10 +16,11 @@ Acessar a url http://localhost/lanchefacil para ver a aplicação e acessar a ur
 
 Em ambientes corporativos, pode ser que ao realizar o apt-get update, aconteça o erro "Hash Sum mismatch".
 É recomendado inserir no dockerfile a seguinte linha antes do update:
+
 RUN rm -rf /var/lib/apt/lists/*
 
 Na versão 2 do jenkins, existe um mecanismo de segurança onde é salvo uma key no seguinte diretório:
 
 /var/lib/jenkins/secrets/initialAdminPassword 
 
-Ao executar a primeira vez, pode ser que o jenkins pessa essa key, portanto acessar a url : http://localhost:9090/login?from=%2F e inserir essa chave e terminar a configuração (No é necessrio instalar plugins, isso será feito ao executar o arquivo /home/config_jenkins_job.sh) 
+Ao executar a primeira vez, pode ser que o jenkins peça essa key, portanto acessar a url : http://localhost:9090/login?from=%2F e inserir essa chave e terminar a configuração (No é necessrio instalar plugins, isso será feito ao executar o arquivo /home/config_jenkins_job.sh) 
