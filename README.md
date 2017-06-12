@@ -10,7 +10,7 @@ Acesse o jenkins na url http://localhost:9090 e insira a senha.
 
 Para completar a configuração do jenkins, é necessário rodar o arquivo /home/config_jenkins_job.sh
 
-Acessar a url http://localhost/lanchefacil para ver a aplicação e acessar a url http://localhost:9090 para acessar o jenkins
+Acessar a url http://localhost/lanchefacil (se ao clicar no link, redirecionar para a porta 8099, remover a porta) para ver a aplicação e acessar a url http://localhost:9090 para acessar o jenkins
 
 # TroubleShooting 
 
