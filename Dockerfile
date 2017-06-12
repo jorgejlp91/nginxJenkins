@@ -46,11 +46,14 @@ RUN apt-get -y install jenkins
 #Configuracao do Jenkins
 RUN rm -f /var/lib/jenkins/config.xml
 RUN cp /assets/jenkins_config.xml /var/lib/jenkins/config.xml
+RUN cp /assets/jenkins_config.xml /home/
 RUN cp /assets/config_job.xml /home/
 #RUN cp /assets/jenkins-cli.jar /home/
 RUN cd /home
 RUN cp /assets/config_jenkins_job.sh /home/
 
-RUN cp /assets/start.sh /home/
-RUN chmod +x /home/start.sh
+RUN cp /assets/start_nginx_jenkins.sh /home/
+RUN cp /assets/start_app.sh /home/
+RUN chmod +x /home/start_nginx_jenkins.sh
+RUN chmod +x /home/start_app.sh
 RUN chmod +x /home/config_jenkins_job.sh
